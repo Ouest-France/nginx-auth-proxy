@@ -1,0 +1,10 @@
+server {
+    listen {{getv "/proxy/listen/port"}} default_server;
+
+    location / {
+        auth_basic "Restricted";
+        auth_basic_user_file /etc/nginx/conf.d/proxy.htpasswd;
+
+        proxy_pass http://{{getv "/proxy/forward/host"}}:{{getv "/proxy/forward/port"}};
+    }
+}

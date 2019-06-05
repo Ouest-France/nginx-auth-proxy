@@ -1,0 +1,8 @@
+[template]
+src = "proxy.conf.tmpl"
+dest = "/etc/nginx/conf.d/proxy.conf"
+keys = [
+    "/proxy/listen/port",
+    "/proxy/forward/host",
+    "/proxy/forward/port",
+]
